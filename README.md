@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Project Title
+# Product & Order Management
 
 A Laravel-based API project for managing products, orders, and user roles.
 
