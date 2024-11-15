@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "a94852de-d301-4103-9eeb-f8c022c492fb",
+		"name": "OrderManagementApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18891602",
+		"_collection_link": "https://kambaiiapp.postman.co/workspace/Kambaii_Dev_WorkSpace~d09be177-7379-4a0e-a900-591559161727/collection/18891602-a94852de-d301-4103-9eeb-f8c022c492fb?action=share&source=collection_link&creator=18891602"
+	},
+	"item": [
+		{
+			"name": "Login & Registraion Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sukanto Mukherjee",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "01824713029",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Nolia, Jamalpur",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/user_registration",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"user_registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "01624389711",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "654321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/user_login",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"user_login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/logout",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vb3JkZXJhcGlhc3NpZ25tZW50LnRlc3QvYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE3MzE2MTM0MDIsImV4cCI6MTczMTYxNzAwMiwibmJmIjoxNzMxNjEzNDAyLCJqdGkiOiJtVDY1aW44N25DaUNWRGxMIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qHI0bKpvYDdmBWZYoawfrmbtdVrIVz-c6tyVZMBSeq4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "01824713029",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/refresh",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userinfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/userinfo",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"userinfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductApi",
+			"item": [
+				{
+					"name": "ProductList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{RootURL}}/api/product/list?per_page=10",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": " use links for pagination"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductStore",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Smart Watch",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "good watch",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/product/store",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Watch",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "good watch",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/product/update/1",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderPlaceApi",
+			"item": [
+				{
+					"name": "PlaceOrderApi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/order/place",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OrderHistoryApi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Watch",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "good watch",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{RootURL}}/api/history",
+							"host": [
+								"{{RootURL}}"
+							],
+							"path": [
+								"api",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
